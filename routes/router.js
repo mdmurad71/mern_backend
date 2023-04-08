@@ -4,6 +4,8 @@ const router = express.Router();
 const users = require("../models/userSchema");
 
 const userController = require("../controller/userController");
+const categoryController = require('../controller/categoryController');
+const subcategoryController = require('../controller/subcategoryController');
 
 // router.get("/",(req,res)=>{
 //     console.log("connect");
@@ -108,8 +110,10 @@ router.delete("/deletebyid/:id", userController.deleteData);
 //         res.status(422).json(error);
 //     }
 // })
+router.post("/addCategory", categoryController.addcategory);
+router.get("/categorydata", categoryController.getCategoryData);
 
-
+router.post("/addsubcategory", subcategoryController.addSubcategory);
 
 
 module.exports = router;

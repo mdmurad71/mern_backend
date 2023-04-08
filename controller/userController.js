@@ -3,6 +3,20 @@
 
 const users = require("../models/userSchema");
 
+const category = require('../models/categorySchema');
+
+exports.getCategoryData = async (req, res) => {
+    try {
+        const cat = await category.find();
+        console.log(cat);
+        res.status(201).json(cat);
+    } catch (error) {
+        res.status(422).json(error);
+
+    }
+
+}
+
 
 exports.adduser = async (req, res) => {
 
