@@ -1,6 +1,7 @@
 
 
 const mongoose = require("mongoose");
+const { ObjectId } = mongoose.Schema.Types;
 
 const subcategorySchema = new mongoose.Schema({
     name: {
@@ -9,7 +10,10 @@ const subcategorySchema = new mongoose.Schema({
 
     },
 
-    category_id: { type: mongoose.Schema.Types.ObjectId, ref: 'category' }
+    category: {
+        type: ObjectId,
+        ref: 'category'
+    }
 
 
 
